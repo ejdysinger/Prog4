@@ -104,7 +104,7 @@ public class Prog4 {
 				queryOne(dbconn);
 			}
 			if (response == 2) { // choice 1
-				insertOffice(dbconn, 3, "first", "85719", "tucson", "university", 2);
+				insertOffice(dbconn,"university", "85719", "tucson", "university", 2);
 			}
 			if (response == 3) { // choice 1
 				deleteOffice(dbconn, 3);
@@ -178,12 +178,11 @@ public class Prog4 {
         }		
 	}
 
-	private static void insertOffice(Connection dbconn, int office_id, String street, String postal, String city,
-			String branch, int manager_id) {
+	private static void insertOffice(Connection dbconn,String branch_id, String street, String postal, String city,
+			int manager_id) {
 		Statement stmt = null;
-		String query = "insert into mattseall.office (office_id, street, postal, city, branch, manager_id)"
-				+ " VALUES (" + office_id + ", '" + street + "', '" + postal + "', '" + city + "', '" + branch
-				+ "', " + manager_id + ")";
+		String query = "insert into mattseall.branch (branch_id, street, postal, city, manager_id)"
+				+ " VALUES ('" + branch_id + "', '" + street + "', '" + postal + "', '" + city + "', "+ manager_id + ")";
 		try {
 
 			stmt = dbconn.createStatement();
@@ -207,7 +206,7 @@ public class Prog4 {
 	private static void deleteOffice(Connection dbconn, int office_id) {
 		Statement stmt = null;
 		String query = "delete from mattseall.office"
-				+ " where office_id=" + office_id;
+				+ " where branch_id=" + office_id;
 		try {
 
 			stmt = dbconn.createStatement();
