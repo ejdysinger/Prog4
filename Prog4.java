@@ -93,6 +93,8 @@ public class Prog4 {
 			System.out.println("Choose from the menu.(-1 to quit)");
 			System.out.println("1.Test querying the mattseall.office table");
 			System.out.println("2. Test an insertion");
+			System.out.println("3. Test a deletion");
+
 
 			response = s.nextInt();
 			if (response == -1) {
@@ -104,7 +106,9 @@ public class Prog4 {
 			if (response == 2) { // choice 1
 				insertOffice(dbconn, 3, "first", "85719", "tucson", "university", 2);
 			}
-
+			if (response == 3) { // choice 1
+				deleteOffice(dbconn, 3);
+			}
 		}
 		s.close();
 	}
@@ -180,6 +184,30 @@ public class Prog4 {
 		String query = "insert into mattseall.office (office_id, street, postal, city, branch, manager_id)"
 				+ " VALUES (" + office_id + ", '" + street + "', '" + postal + "', '" + city + "', '" + branch
 				+ "', " + manager_id + ")";
+		try {
+
+			stmt = dbconn.createStatement();
+			stmt.executeQuery(query);
+
+			// Shut down the connection to the DBMS.
+
+			stmt.close();
+			dbconn.close();
+
+		} catch (SQLException e) {
+
+			System.err.println("*** SQLException:  " + "Could not fetch query results.");
+			System.err.println("\tMessage:   " + e.getMessage());
+			System.err.println("\tSQLState:  " + e.getSQLState());
+			System.err.println("\tErrorCode: " + e.getErrorCode());
+			System.exit(-1);
+
+		}
+	}
+	private static void deleteOffice(Connection dbconn, int office_id) {
+		Statement stmt = null;
+		String query = "delete from mattseall.office"
+				+ " where office_id=" + office_id;
 		try {
 
 			stmt = dbconn.createStatement();
