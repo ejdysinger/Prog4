@@ -92,6 +92,7 @@ public class Prog4 {
 		while (response != -1) { // if the user enters -1, quit the program
 			System.out.println("Choose from the menu.(-1 to quit)");
 			System.out.println("1.Test querying the mattseall.office table");
+			System.out.println("2. Test an insertion");
 
 			response = s.nextInt();
 			if (response == -1) {
@@ -99,6 +100,9 @@ public class Prog4 {
 			}
 			if (response == 1) { // choice 1
 				queryOne(dbconn);
+			}
+			if (response == 2) { // choice 1
+				insertOffice(dbconn, 3, "first", "85719", "tucson", "university", 2);
 			}
 
 		}
@@ -168,5 +172,32 @@ public class Prog4 {
                 System.exit(-1);
 
         }		
+	}
+
+	private static void insertOffice(Connection dbconn, int office_id, String street, String postal, String city,
+			String branch, int manager_id) {
+		Statement stmt = null;
+		String query = "insert into mattseall.office (office_id, street, postal, city, branch, manager_id)"
+				+ " VALUES (" + office_id + ", '" + street + "', '" + postal + "', '" + city + "', '" + branch
+				+ "', " + manager_id + ")";
+		try {
+
+			stmt = dbconn.createStatement();
+			stmt.executeQuery(query);
+
+			// Shut down the connection to the DBMS.
+
+			stmt.close();
+			dbconn.close();
+
+		} catch (SQLException e) {
+
+			System.err.println("*** SQLException:  " + "Could not fetch query results.");
+			System.err.println("\tMessage:   " + e.getMessage());
+			System.err.println("\tSQLState:  " + e.getSQLState());
+			System.err.println("\tErrorCode: " + e.getErrorCode());
+			System.exit(-1);
+
+		}
 	}
 }
