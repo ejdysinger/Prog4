@@ -20,6 +20,11 @@
 	<input type="submit" value="Submit" onClick="insertBranch(document.getElementById('branch_id').value, document.getElementById('street').value, document.getElementById('postal').value, document.getElementById('city').value,
 	document.getElementById('manager_id').value)">
 	</form>
+	 <h6>Delete from Branch table.</h6>
+	<form action="scripts/search.js" method="test">
+	Branch: <input type="text" name="branch_id">
+	<input type="submit" value="Submit" onClick="deleteBranch(document.getElementById('branch_id').value)">
+	</form>
 	</form>
 	 <h6>Insert into Client table.</h6>
 	<form action="scripts/search.js" method="insertClient">
@@ -32,6 +37,11 @@
 	branch_id: <input type="text" name="branch_id">
 	<input type="submit" value="Submit" onClick="insertClient(document.getElementById('client_id').value, document.getElementById('lastname').value, document.getElementById('firstname').value, document.getElementById('sex').value,
 	document.getElementById('milesdriven').value,document.getElementById('license').value,document.getElementById('branch_id').value)">
+	</form>
+	 <h6>Delete From Client table.</h6>
+	<form action="scripts/search.js" method="test">
+	Client ID: <input type="number" name="client_id">
+	<input type="submit" value="Submit" onClick="deleteClient(document.getElementById('client_id').value)">
 	</form>
 	 <h6>Insert into Employee table.</h6>
 	<form action="scripts/search.js" method="insertEmployee">
@@ -46,6 +56,11 @@
 	<input type="submit" value="Submit" onClick="insertEmployee(document.getElementById('emp_id').value, document.getElementById('class').value, document.getElementById('lastname').value, document.getElementById('firstname').value,
 	document.getElementById('sex').value,document.getElementById('phone').value,document.getElementById('age').value,document.getElementById('branch_id').value)">
 	</form>
+	 <h6>Delete from Employee table.</h6>
+	<form action="scripts/search.js" method="test">
+	Emp ID: <input type="number" name="emp_id">
+	<input type="submit" value="Submit" onClick="deleteEmployee(document.getElementById('emp_id').value)">
+	</form>
 	 <h6>Insert into Lesson table.</h6>
 	<form action="scripts/search.js" method="test">
 	Lesson ID: <input type="number" name="client_id">
@@ -54,28 +69,50 @@
 	CLient ID: <input type="text" name="sex">
 	Employee ID: <input type="number" name="emp_id">
 	<input type="submit" value="Submit" onClick="insertLesson(document.getElementById('lesson_id').value, document.getElementById('lesson_date').value, document.getElementById('mileage').value, document.getElementById('client_id').value,
-	document.getElementById('emp_id').value">
+	document.getElementById('emp_id').value)">
+	</form>
+	 <h6>Delete from Lesson table.</h6>
+	<form action="scripts/search.js" method="test">
+	Lesson ID: <input type="number" name="client_id">
+	<input type="submit" value="Submit" onClick="deleteLesson(document.getElementById('lesson_id').value)">
 	</form>
 		 <h6>Insert into Interview table.</h6>
 	<form action="scripts/search.js" method="test">
 	Description: <input type="text" name="description">
 	client ID: <input type="number" name="client_id">
 	Employee ID: <input type="number" name="emp_id">
-	<input type="submit" value="Submit" onClick="insertInterview(document.getElementById('description').value, document.getElementById('client_id').value, document.getElementById('emp_id').valuee">
+	<input type="submit" value="Submit" onClick="insertInterview(document.getElementById('description').value, document.getElementById('client_id').value, document.getElementById('emp_id').value)">
+	</form>
+		 <h6>Delete from Interview table.</h6>
+	<form action="scripts/search.js" method="test">
+	client ID: <input type="number" name="client_id">
+	Employee ID: <input type="number" name="emp_id">
+	<input type="submit" value="Submit" onClick="deleteInterview(document.getElementById('client_id').value, document.getElementById('emp_id').value)">
 	</form>
 		 <h6>Insert into Vehicle table.</h6>
 	<form action="scripts/search.js" method="test">
 	vehicle ID: <input type="number" name="vehicle_id">
 	Description: <input type="text" name="description">
 	Employee ID: <input type="number" name="emp_id">
-	<input type="submit" value="Submit" onClick="insertVehicle(document.getElementById('vehicle_id').value, document.getElementById('description').value, document.getElementById('emp_id').valuee">
+	<input type="submit" value="Submit" onClick="insertVehicle(document.getElementById('vehicle_id').value, document.getElementById('description').value, document.getElementById('emp_id').value)">
 	</form>
-		<h6>Insert into Vehicle table.</h6>
+			 <h6>Delete from Vehicle table.</h6>
+	<form action="scripts/search.js" method="test">
+	vehicle ID: <input type="number" name="vehicle_id">
+	<input type="submit" value="Submit" onClick="deleteVehicle(document.getElementById('vehicle_id').valuee)">
+	</form>
+		<h6>Insert into Vehicle Inspection table.</h6>
 	<form action="scripts/search.js" method="test">
 	Date: <input type="text" name="inspection_date">
 	fault: <input type="number" name="fault">
 	vehicle ID: <input type="number" name="vehicle_id">
-	<input type="submit" value="Submit" onClick="insertVehicleInspection(document.getElementById('inspection_date').value, document.getElementById('fault').value, document.getElementById('vehicle_id').valuee">
+	<input type="submit" value="Submit" onClick="insertVehicleInspection(document.getElementById('inspection_date').value, document.getElementById('fault').value, document.getElementById('vehicle_id').value)">
+	</form>
+		<h6>Delete from Vehicle Inspection table.</h6>
+	<form action="scripts/search.js" method="test">
+	Date: <input type="text" name="inspection_date">
+	vehicle ID: <input type="number" name="vehicle_id">
+	<input type="submit" value="Submit" onClick="deleteVehicleInspection(document.getElementById('inspection_date').value, document.getElementById('vehicle_id').value)">
 	</form>
   <h2>CS460 Fall2015, Program #4<h2>
   <h4>Demo of a Simple JSP Application</h4>
