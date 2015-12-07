@@ -4,21 +4,21 @@
 <head>
 <title>demo of JSP with one button</title>
 <meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
-<script type="text/javascript" src="scripts/search.js"></script>
 </head>
 <body>
 <br/>
 <br/>
+<script type="text/javascript" src="scripts/search.js"> </script>
 <div align="center">
+
 	 <h6>Insert into Branch table.</h6>
-	<form action="scripts/search.js" method="test">
+	<form NAME="myform" ACTION="" METHOD="GET">
 	Branch: <input type="text" name="branch_id">
 	Street: <input type="text" name="street">
 	postal: <input type="text" name="postal">
 	city: <input type="text" name="city">
 	manager ID: <input type="number" name="manager_id">
-	<input type="submit" value="Submit" onClick="insertBranch(document.getElementById('branch_id').value, document.getElementById('street').value, document.getElementById('postal').value, document.getElementById('city').value,
-	document.getElementById('manager_id').value)">
+	<input type="button" value="Submit" onClick="testResults(this.form)">
 	</form>
 	 <h6>Delete from Branch table.</h6>
 	<form action="scripts/search.js" method="test">
@@ -122,6 +122,8 @@
   <br/>
   <input type="button" id="btn_search" value="list all employees"
       onClick="Search()"/>
+	  <p id="demo"></p>
+
 </div>
 </body>
 </html>
