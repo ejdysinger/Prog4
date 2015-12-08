@@ -15,12 +15,14 @@
 
 <sql:update dataSource="${snapshot}" var="result">
 insert into mattseall.vehicle 
-(vehicle_id, emp_id, description)
+(vehicle_id, emp_id, description, mileage)
 VALUES 
-(?, ?, ?)
+(?, ?, ?, ?)
   <sql:param value="${param.vehicle_id}" />
   <sql:param value="${param.emp_id}" />
   <sql:param value="${param.description}" />
+   <sql:param value="${param.mileage}" />
+
 </sql:update>
 <sql:query dataSource="${snapshot}" var="result">
 SELECT * from mattseall.vehicle
@@ -30,7 +32,9 @@ SELECT * from mattseall.vehicle
 <tr>
    <th>vehicle ID</th>
    <th>employee id</th>
-   <th>description</th>   
+   <th>description</th>  
+   <th>mileage</th>   
+
 
 </tr>
 <c:forEach var="row" items="${result.rows}">
@@ -38,6 +42,8 @@ SELECT * from mattseall.vehicle
    <td><c:out value="${row.vehicle_id}"/></td>
    <td><c:out value="${row.emp_id}"/></td>
    <td><c:out value="${row.description}"/></td>
+   <td><c:out value="${row.mileage}"/></td>
+
 </tr>
 </c:forEach>
 </table>
