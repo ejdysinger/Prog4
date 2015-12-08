@@ -5,7 +5,7 @@
  
 <html>
 <head>
-<title>Names of the clients who passed the driving exam.</title>
+<title>Names of clients who have driven less than 25 miles</title>
 </head>
 <body>
  
@@ -14,23 +14,21 @@
      user="tkoch"  password="a6743"/>
 
 <sql:query dataSource="${snapshot}" var="result">
-SELECT unique b.firstname as fname, b.lastname as lname, b.client_id as cid
-from mattseall.exam a, mattseall.client b
-where a.client_id=b.client_id and a.type='driving' and a.pass='y'
+SELECT firstname, lastname
+from mattseall.client
+where milesdriven<25
 </sql:query>
  
 <table border="1" width="100%">
 <tr>
    <th>First Name</th>
    <th>Last Name</th>
-   <th>Client ID</th>
 
 </tr>
 <c:forEach var="row" items="${result.rows}">
 <tr>
-   <td><c:out value="${row.fname}"/></td>
-   <td><c:out value="${row.lname}"/></td>
-   <td><c:out value="${row.cid}"/></td>
+   <td><c:out value="${row.firstname}"/></td>
+   <td><c:out value="${row.lastname}"/></td>
 
 </tr>
 </c:forEach>

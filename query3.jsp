@@ -14,7 +14,7 @@
      user="tkoch"  password="a6743"/>
 
 <sql:query dataSource="${snapshot}" var="result">
-SELECT firstname, lastname
+SELECT unique firstname, lastname
 from mattseall.client
 where milesdriven<25
 </sql:query>

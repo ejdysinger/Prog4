@@ -5,7 +5,7 @@
  
 <html>
 <head>
-<title>Delete employee Operation</title>
+<title>SELECT Operation</title>
 </head>
 <body>
  
@@ -14,37 +14,33 @@
      user="tkoch"  password="a6743"/>
 
 <sql:update dataSource="${snapshot}" var="result">
-delete from mattseall.employee 
-where emp_id = ?
-  <sql:param value="${param.emp_id}" />
+INSERT INTO mattseall.branch (branch_id, street, postal, city, manager_id) VALUES (?, ?, ?, ?, ?)
+  <sql:param value="${param.branch_id}" />
+  <sql:param value="${param.street}" />
+  <sql:param value="${param.postal}" />
+  <sql:param value="${param.city}" />
+  <sql:param value="${param.manager_id}" />
 </sql:update>
 <sql:query dataSource="${snapshot}" var="result">
-SELECT * from mattseall.employee
+SELECT * from mattseall.branch
 </sql:query>
  
 <table border="1" width="100%">
 <tr>
-   <th>Employee Id</th>
-   <th>Class</th>
-    <th>Last Name</th>
-   <th>First name</th>
-   <th>Sex</th>   
-   <th>Phone Number</th>
-   <th>Age</th>
-   <th>Branch</th>
+   <th>Branch ID</th>
+   <th>Street</th>
+   <th>Postal</th>
+   <th>City</th>   
+   <th>Manager ID</th>
 
 </tr>
 <c:forEach var="row" items="${result.rows}">
 <tr>
-   <td><c:out value="${row.emp_id}"/></td>
-   <td><c:out value="${row.class}"/></td>
-    <td><c:out value="${row.lastname}"/></td>
-   <td><c:out value="${row.firstname}"/></td>
-   <td><c:out value="${row.sex}"/></td>
-   <td><c:out value="${row.phoneNum}"/></td>
-   <td><c:out value="${row.age}"/></td>
    <td><c:out value="${row.branch_id}"/></td>
-
+   <td><c:out value="${row.street}"/></td>
+   <td><c:out value="${row.postal}"/></td>
+   <td><c:out value="${row.city}"/></td>
+   <td><c:out value="${row.manager_id}"/></td>
 </tr>
 </c:forEach>
 </table>
