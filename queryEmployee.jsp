@@ -16,7 +16,7 @@
      user="tkoch"  password="a6743"/>
 
 <sql:query dataSource="${snapshot}" var="result">
-select emp_id, lastname, firstname, class from mattseall.employee where class="senior_instructor";
+select emp_id, lastname, firstname, class from mattseall.employee where class='Senior Instr.';
 </sql:update>
 
 <table border="1" width="100%">

@@ -16,7 +16,7 @@
      user="tkoch"  password="a6743"/>
 
 <sql:query dataSource="${snapshot}" var="result">
-select * from mattseall.vehicle;
+select * from mattseall.vehicle INNER JOIN mattseall.employee ON mattseall.vehicle.emp_id = mattseall.employee.emp_id WHERE employee.class = 'Senior Instr.';
 </sql:update>
 
 <table border="1" width="100%">
