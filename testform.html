@@ -1,17 +1,28 @@
-<HTML>
-<HEAD>
-<TITLE>Test Input</TITLE>
-<SCRIPT LANGUAGE="JavaScript">
-function testResults (form) {
-    var TestVar = form.inputbox.value;
-    alert ("You typed: " + TestVar);
-}
-</SCRIPT>
-</HEAD>
-<BODY>
-<FORM NAME="myform" ACTION="" METHOD="GET">Enter something in the box: <BR>
-<INPUT TYPE="text" NAME="inputbox" VALUE=""><P>
-<INPUT TYPE="button" NAME="button" Value="Click" onClick="testResults(this.form)">
-</FORM>
-</BODY>
-</HTML>
+<html>
+<body>
+
+<h1>Please tell me about yourself</h1>
+
+<form action="main.jsp" method="get">
+
+Name: <input type="text" name="firstName">
+  <input type="text" name="lastName"><br>
+Sex:
+  <input type="radio" checked name="sex" value="male">Male
+  <input type="radio" name="sex" value="female">Female
+<p>
+What Java primitive type best describes your personality:
+<select name="javaType">
+  <option value="boolean">boolean</option> 
+  <option value="byte">byte</option> 
+  <option value="char" selected>char</option> 
+  <option value="double">double</option> 
+  <option value="float">float</option> 
+  <option value="int">int</option> 
+  <option value="long">long</option> 
+</select>
+<br>
+<input type="submit">
+</form>
+</body>
+</html>

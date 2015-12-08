@@ -12,13 +12,13 @@
 <div align="center">
 
 	 <h6>Insert into Branch table.</h6>
-	<form NAME="myform" ACTION="" METHOD="GET">
-	Branch: <input type="text" name="branch_id">
-	Street: <input type="text" name="street">
-	postal: <input type="text" name="postal">
-	city: <input type="text" name="city">
-	manager ID: <input type="number" name="manager_id">
-	<input type="button" value="Submit" onClick="testResults(this.form)">
+	<form ACTION="main.jsp" METHOD="POST">
+	Branch: <input type="text" name="branch_id"/>
+	Street: <input type="text" name="street"/>
+	postal: <input type="text" name="postal"/>
+	city: <input type="text" name="city"/>
+	manager ID: <input type="number" name="manager_id"/>
+	<input type="submit" value="Submit"/>
 	</form>
 	 <h6>Delete from Branch table.</h6>
 	<form action="scripts/search.js" method="test">
