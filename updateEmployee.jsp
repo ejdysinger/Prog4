@@ -14,11 +14,15 @@
      user="tkoch"  password="a6743"/>
 
 <sql:update dataSource="${snapshot}" var="result">
-insert into mattseall.employee
-(emp_id, class, lastname, firstname, sex, phoneNum, age, branch_id)
-VALUES
-(?, ?, ?, ?, ?, ?, ?, ?)
-  <sql:param value="${param.emp_id}" />
+UPDATE mattseall.employee
+SET class = ?,
+	lastName = ?,
+	firstName = ?,
+	branch_id = ?,
+	sex = ?,
+	phoneNum = ?,
+	age = ?
+WHERE emp_id = ?
   <sql:param value="${param.class}" />
   <sql:param value="${param.lastname}" />
   <sql:param value="${param.firstname}" />
@@ -26,6 +30,7 @@ VALUES
   <sql:param value="${param.phoneNum}" />
   <sql:param value="${param.age}" />
   <sql:param value="${param.branch_id}" />
+  <sql:param value="${param.emp_id}" />
 
 </sql:update>
 <sql:query dataSource="${snapshot}" var="result">
