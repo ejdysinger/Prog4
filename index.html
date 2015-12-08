@@ -43,7 +43,7 @@
 	<input type="submit" value="Submit" onClick="deleteClient(document.getElementById('client_id').value)">
 	</form>
 	 <h6>Insert into Employee table.</h6>
-	<form ACTION="insertEmployee.jsp" METHOD="POST"">
+	<form ACTION="insertEmployee.jsp" METHOD="POST">
 	Emp ID: <input type="number" name="emp_id">
 	class: <input type="text" name="class">
 	Last Name: <input type="text" name="lastname">
@@ -58,6 +58,18 @@
 	<form action="scripts/search.js" method="test">
 	Emp ID: <input type="number" name="emp_id">
 	<input type="submit" value="Submit" onClick="deleteEmployee(document.getElementById('emp_id').value)">
+	</form>
+	<h6>Update the Employee table.</h6>
+	<form ACTION="insertEmployee.jsp" METHOD="POST">
+	<br>Where Emp ID= <input type="number" name="emp_id"></br>
+	new class: <input type="text" name="class">
+	new Last Name: <input type="text" name="lastname">
+	new First name: <input type="text" name="firstname">
+	new sex: <input type="text" name="sex">
+	new phone: <input type="text" name="phone">
+	new age: <input type="number" name="age">
+	new branch_id: <input type="text" name="branch_id">
+	<input type="submit" value="Submit"/>
 	</form>
 	 <h6>Insert into Lesson table.</h6>
 	<form ACTION="insertLesson.jsp" METHOD="POST">
@@ -103,7 +115,7 @@
 	Date: <input type="text" name="inspection_date">
 	fault: <input type="number" name="fault">
 	vehicle ID: <input type="number" name="vehicle_id">
-	<input type="submit" value="Submit"/">
+	<input type="submit" value="Submit"/>
 	</form>
 		<h6>Delete from Vehicle Inspection table.</h6>
 	<form action="scripts/search.js" method="test">
@@ -117,7 +129,7 @@
 	type: <input type="text" name="type">
 	client ID: <input type="number" name="client_id">
 	pass: <input type="number" name="pass">
-	<input type="submit" value="Submit"/">
+	<input type="submit" value="Submit"/>
 		<h6>Delete from Exam table.</h6>
 	<form action="scripts/search.js" method="test">
 	vehicle ID: <input type="number" name="exam_id">
@@ -139,7 +151,7 @@
 	<form ACTION="query5.jsp" METHOD="POST">
 	Count of Clients:
 	<input type="submit" value="Submit"/>
-
+	
 </div>
 </body>
 </html>
