@@ -14,35 +14,30 @@
      user="tkoch"  password="a6743"/>
 
 <sql:update dataSource="${snapshot}" var="result">
-insert into mattseall.vehicle 
-(vehicle_id, emp_id, description, mileage)
-VALUES 
-(?, ?, ?, ?)
+insert into mattseall.vehicle_inspection
+(vehicle_id, inspection_date, fault)
+values
+(?, TO_TIMESTAMP(?, 'YYYY-MM-DD HH24:MI:SS'), ?)
   <sql:param value="${param.vehicle_id}" />
-  <sql:param value="${param.emp_id}" />
-  <sql:param value="${param.description}" />
-   <sql:param value="${param.mileage}" />
-
+  <sql:param value="${param.inspection_date}" />
+  <sql:param value="${param.fault}" />
 </sql:update>
 <sql:query dataSource="${snapshot}" var="result">
-SELECT * from mattseall.vehicle
+SELECT * from mattseall.vehicle_inspection
 </sql:query>
  
 <table border="1" width="100%">
 <tr>
    <th>vehicle ID</th>
-   <th>employee id</th>
-   <th>description</th>  
-   <th>mileage</th>   
-
+   <th>inspection date</th>
+   <th>fault</th>
 
 </tr>
 <c:forEach var="row" items="${result.rows}">
 <tr>
    <td><c:out value="${row.vehicle_id}"/></td>
-   <td><c:out value="${row.emp_id}"/></td>
-   <td><c:out value="${row.description}"/></td>
-   <td><c:out value="${row.mileage}"/></td>
+   <td><c:out value="${row.inspection_date}"/></td>
+   <td><c:out value="${row.fault}"/></td>
 
 </tr>
 </c:forEach>

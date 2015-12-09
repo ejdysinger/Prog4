@@ -14,35 +14,31 @@
      user="tkoch"  password="a6743"/>
 
 <sql:update dataSource="${snapshot}" var="result">
-insert into mattseall.vehicle 
-(vehicle_id, emp_id, description, mileage)
-VALUES 
-(?, ?, ?, ?)
-  <sql:param value="${param.vehicle_id}" />
+insert into mattseall.interview
+(client_id, emp_id, description)
+values
+(?, ?, ?)
+  <sql:param value="${param.client_id}" />
   <sql:param value="${param.emp_id}" />
   <sql:param value="${param.description}" />
-   <sql:param value="${param.mileage}" />
 
 </sql:update>
 <sql:query dataSource="${snapshot}" var="result">
-SELECT * from mattseall.vehicle
+SELECT * from mattseall.interview
 </sql:query>
  
 <table border="1" width="100%">
 <tr>
-   <th>vehicle ID</th>
+   <th>client ID</th>
    <th>employee id</th>
-   <th>description</th>  
-   <th>mileage</th>   
-
+   <th>description</th>
 
 </tr>
 <c:forEach var="row" items="${result.rows}">
 <tr>
-   <td><c:out value="${row.vehicle_id}"/></td>
+   <td><c:out value="${row.client_id}"/></td>
    <td><c:out value="${row.emp_id}"/></td>
    <td><c:out value="${row.description}"/></td>
-   <td><c:out value="${row.mileage}"/></td>
 
 </tr>
 </c:forEach>
